@@ -15,7 +15,7 @@ Reorder arrays of column names in a prespecified order
     stackoverflow R
     https://stackoverflow.com/questions/73776552/how-to-order-variables-in-blocks
 
-     Three Solution array, retain and length all work
+     Three Solutions array, retain and length all work
      For arrray subsitute array[&n*&n=1] for retain
 
          1. SAS
