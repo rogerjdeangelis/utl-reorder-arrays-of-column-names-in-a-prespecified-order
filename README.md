@@ -15,7 +15,8 @@ Reorder arrays of column names in a prespecified order
     stackoverflow R
     https://stackoverflow.com/questions/73776552/how-to-order-variables-in-blocks
 
-     Three Solutions (note reatain and length do not work)
+     Three Solution array, retain and length all work
+     For arrray subsitute array[&n*&n=1] for retain
 
          1. SAS
          2. WPS
@@ -83,7 +84,7 @@ Reorder arrays of column names in a prespecified order
     %let n =  %sysfunc(countw(%utl_varlist(have,prx=/height/i)));
 
     data want;
-       array ord[%eval(&n*&n+1)]
+       retain
           id
           height_1-height_&n
           weight_1-weight_&n
@@ -109,7 +110,7 @@ Reorder arrays of column names in a prespecified order
 
     data want;
 
-       array ord[%eval(&n*&n+1)]
+       retain
           id
           height_1-height_&n
           weight_1-weight_&n
@@ -152,7 +153,7 @@ Reorder arrays of column names in a prespecified order
               ');
           end;
 
-       array ord[%eval(&n*&n+1)]
+       retain
           id
           height_1-height_&n
           weight_1-weight_&n
