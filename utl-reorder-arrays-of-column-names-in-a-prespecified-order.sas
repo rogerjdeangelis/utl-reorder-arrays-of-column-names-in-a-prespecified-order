@@ -13,7 +13,8 @@ https://github.com/rogerjdeangelis/utl-reorder-arrays-of-column-names-in-a-presp
 stackoverflow R
 https://stackoverflow.com/questions/73776552/how-to-order-variables-in-blocks
 
- Three Solutions (note reatain and length do not work)
+ Three Solution array, retain and length all work
+ For arrray subsitute array[&n*&n+1] for retain
 
      1. SAS
      2. WPS
@@ -81,7 +82,7 @@ Up to 40 obs WORK.WANT total obs=2 19SEP2022:16:20:21
 %let n =  %sysfunc(countw(%utl_varlist(have,prx=/height/i)));
 
 data want;
-   array ord[%eval(&n*&n+1)]
+   retain
       id
       height_1-height_&n
       weight_1-weight_&n
@@ -107,7 +108,7 @@ options sasautos=(c:/macros_rjd sasautos);
 
 data want;
 
-   array ord[%eval(&n*&n+1)]
+   retain
       id
       height_1-height_&n
       weight_1-weight_&n
@@ -150,7 +151,7 @@ data want_dosubl;
           ');
       end;
 
-   array ord[%eval(&n*&n+1)]
+   retain
       id
       height_1-height_&n
       weight_1-weight_&n
